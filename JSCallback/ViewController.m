@@ -49,9 +49,14 @@
 }
 
 #pragma mark - JSBridgeJSExport
+- (void)exec:(NSString *)data {
+    NSString *execResult = [NSString stringWithFormat:@"(One way)Your input data is : %@",data];
+    NSLog(@"input data : %@",execResult);
+}
+
 - (void)exec:(NSString *)data withCallback:(JSValue *)callback {
     NSLog(@"input data : %@",data);
-    NSString *returnValue = [NSString stringWithFormat:@"Your input data is : %@",data];
+    NSString *returnValue = [NSString stringWithFormat:@"(Two way)Your input data is : %@",data];
     [callback callWithArguments:@[returnValue]];
 }
 

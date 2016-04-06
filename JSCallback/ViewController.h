@@ -11,6 +11,7 @@
 
 
 @protocol JSBridgeJSExport <JSExport>
+- (void)exec:(NSString *)data;
 - (void)exec:(NSString *)data withCallback:(JSValue *)callback ;
 @end
 
